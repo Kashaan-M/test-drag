@@ -1,67 +1,43 @@
 const wrapper = document.querySelector('.wrapper');
-const parent = document.querySelector('.parent');
+const answerbox = document.querySelector('.answerbox');
 const one = document.querySelector('.one');
 const two = document.querySelector('.two');
 const three = document.querySelector('.three');
 
-let dragged;
-
-const children = [one, two, three];
-
-children.forEach((child) => {
-  child.draggable = true;
-  child.addEventListener('dragstart', function (e) {
-    // store a reference on the dragged element
-    dragged = e.target;
-    console.log(`dragging...${e.target.textContent}`);
-  });
-});
-
-parent.addEventListener(
-  'dragover',
-  function (e) {
-    // prevent default to allow drop event
-    e.preventDefault();
-  },
-  false,
-);
-parent.addEventListener('dragenter', function (e) {
-  console.log('some child is getting in...');
-});
-
-parent.addEventListener('dragleave', function (e) {
-  for (let child of parent.children) {
-    if (child === e.target) {
-      parent.removeChild(dragged);
-      wrapper.appendChild(dragged);
-    }
-  }
-  console.log(`removed ${e.target.textContent}`);
-});
-
-//console.log(three.getBoundingClientRect());
-
-parent.addEventListener('drop', function (e) {
-  e.preventDefault();
-  parent.appendChild(dragged);
-  console.log('dropped...');
+dragula([
+  document.querySelector('.answerbox'),
+  document.querySelector('#wordsbox'),
+]).on('dragend', function (e) {
   checkResult();
 });
 
 function checkResult() {
-  const results = [1, 2, 3];
+  const results = [
+    [1, 2, 3],
+    [1, 3, 2],
+  ];
   let out = false;
-  for (let i = 0; i < results.length; i++) {
-    if (results[i] == parent.children[i].dataset.key) {
-      out = true;
-    } else {
-      out = false;
+
+  let childrens = Array.from(answerbox.children);
+
+  try {
+    for (let possible of results) {
+      // check if answerbox has all children in one of possible arrangements (as described by the `results`)
+      out = possible.every(
+        (result, index) => result === Number(childrens[index].dataset.key),
+      );
+      // if out becomes true then break out of this loop
+      if (out) break;
     }
-  }
+  } catch (error) {}
+
+  // assign classes based on state of out
+
   if (out) {
-    parent.style.border = '2px solid green';
+    answerbox.classList.remove('unsolved');
+    answerbox.classList.add('correct');
   } else {
-    parent.style.border = '2px solid red';
+    answerbox.classList.remove('correct');
+    answerbox.classList.add('unsolved');
   }
-  //parent.
 }

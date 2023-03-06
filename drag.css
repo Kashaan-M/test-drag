@@ -1,12 +1,25 @@
-.parent {
-  width: 300px;
-  height: 130px;
+.answerbox,
+.wordsbox {
+  width: auto;
+  height: auto;
   border: 2px solid black;
-  padding-right: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+.correct {
+  border: 2px solid limegreen;
+}
+.unsolved {
+  border: 2px solid orangered;
 }
 .child {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1rem;
   width: auto;
-  height: 100px;
+}
+
+.wordsbox span {
+  background-color: darkgrey;
+  padding: 2px 3px;
+  margin: 0 3px;
 }
