@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="googlebot" content="index,follow" />
+    <meta property="og:title" content="Hello" />
+    <meta property="og:description" content="Identify Arabic, Urdu, Pashto, Sindhi, Persian, Kurdish with this regular expression" />
+    <meta property="og:url" content="https://kashaan-m.github.io/blog/hello.html" />
+    <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*c8UMCmXFHumTOsRUooKZpw.png" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Hello</title>
+  </head>
+  <body class="light">
+  
+    <header id="main-header-top">
+      <div id="theme-button">
+        <input type="checkbox" name="power" id="power" />
+        <label for="power">
+          <span class="on">Dark Theme</span>
+          <span class="off">Light Theme</span>
+        </label>
+      </div>
+      <h3>
+        <a href="https://kashaan-m.github.io/blog">Web Programming</a>
+      </h3>
+    </header>
+    <main>
+      <section class="articles-wrapper">
+    <div class="wrapper" dir="rtl">
+      <div class="parent">
+        <div class="child one" data-key="1">ضَرَبَ</div>
+        <div class="child two" data-key="2">زَیْدٌ</div>
+      </div>
+      <div class="parent" id="parent-2">
+        <div class="child three" data-key="3">حَامِدََا</div>
+      </div>
+    </div>
+    <script src='./dragula.min.js' defer></script>
+    <script type="module">
+        dragula([document.querySelector('.parent'),document.querySelector('#parent-2'),
+        ]);
+    </script>
+        <a href="./second.html">Go to second </a>
+      </section>
+    </main>
+    <footer>
+      <a href="https://github.com/Kashaan-M" class="link social-link">GitHub</a>
+      <a
+        href="https://www.linkedin.com/in/kashaan-mahmood-63a496a4/"
+        class="link social-link"
+        >LinkedIn</a
+      >
+    </footer>
+  </body>
+</html>
