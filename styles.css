@@ -1,5 +1,4 @@
 @import url('./resets.css');
-@import url('./prism.css');
 @import url('./drag.css');
 @import url('./dragula.min.css');
 *,
@@ -23,7 +22,7 @@ ul {
 :root {
   --clr-dark-bg: #131e1e;
   --clr-dark-text: #282626;
-  --clr-light-bg: #b8d7b1;
+  --clr-light-bg: #ffffff;
   --clr-light-text: #d7d5ce;
   --clr-primary-light: #7642c1;
   --clr-primary-dark-alt: #489199;

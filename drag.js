@@ -1,21 +1,38 @@
-const wrapper = document.querySelector('.wrapper');
-const answerbox = document.querySelector('.answerbox');
-const one = document.querySelector('.one');
-const two = document.querySelector('.two');
-const three = document.querySelector('.three');
+const ab1 = document.querySelector('#ab1');
+const wb1 = document.querySelector('#wb1');
+const ab2 = document.querySelector('#ab2');
+const wb2 = document.querySelector('#wb2');
+const ab3 = document.querySelector('#ab3');
+const wb3 = document.querySelector('#wb3');
 
+// first question
 dragula([
-  document.querySelector('.answerbox'),
-  document.querySelector('#wordsbox'),
+  ab1,
+  wb1
 ]).on('dragend', function (e) {
-  checkResult();
+  const results = [[4,3,5]];
+  checkResult(results,ab1);
+});
+// second question
+dragula([
+  ab2,
+  wb2
+]).on('dragend', function (e) {
+  const results = [[1,3,2]];
+  checkResult(results,ab2);
+});
+// third question
+dragula([
+  ab3,
+  wb3
+]).on('dragend', function (e) {
+  const results = [[2,3,6]];
+  checkResult(results,ab3);
 });
 
-function checkResult() {
-  const results = [
-    [1, 2, 3],
-    [1, 3, 2],
-  ];
+
+
+function checkResult(results,answerbox) {
   let out = false;
 
   let childrens = Array.from(answerbox.children);
@@ -34,8 +51,18 @@ function checkResult() {
   // assign classes based on state of out
 
   if (out) {
-    answerbox.classList.remove('unsolved');
-    answerbox.classList.add('correct');
+    // check if the answerbox contains correct number of words i.e. no extra words
+    // we do this by taking the first result from results assuming that ...
+    // ... length of all items within results will be identical to each other
+
+    if(childrens.length === results[0].length) {
+      answerbox.classList.remove('unsolved');
+      answerbox.classList.add('correct');
+    }
+    else if (childrens.length !== results[0].length) {
+      answerbox.classList.remove('correct');
+      answerbox.classList.add('unsolved');
+    }
   } else {
     answerbox.classList.remove('correct');
     answerbox.classList.add('unsolved');
