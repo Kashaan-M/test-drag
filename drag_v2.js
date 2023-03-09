@@ -1,24 +1,19 @@
-const ab1 = document.querySelector('#ab1');
-const wb1 = document.querySelector('#wb1');
-const ab2 = document.querySelector('#ab2');
-const wb2 = document.querySelector('#wb2');
-const ab3 = document.querySelector('#ab3');
-const wb3 = document.querySelector('#wb3');
+// all answerboxes
+const answerboxes = document.querySelectorAll('div[id^=ab]');
+// all wordboxes
+const wordboxes = document.querySelectorAll('div[id^=wb]');
 
-// first question
-dragula([ab1, wb1]).on('dragend', function (e) {
-  const results = [[4, 3, 5]];
-  checkResult(results, ab1);
-});
-// second question
-dragula([ab2, wb2]).on('dragend', function (e) {
-  const results = [[1, 3, 2]];
-  checkResult(results, ab2);
-});
-// third question
-dragula([ab3, wb3]).on('dragend', function (e) {
-  const results = [[2, 3, 6]];
-  checkResult(results, ab3);
+// allResults is a dict containing all possible correct results for individual answerboxes.
+// In allResults, the keys correspond to each answerbox's index in answerboxes
+// and the values correspond to all possible correct result for that particular answerbox
+const allResults = { 0: [[4, 3, 5]], 1: [[1, 3, 2]], 2: [[2, 3, 6]] };
+
+// use answerboxes and wordboxes and add dragula to each pair
+answerboxes.forEach((answerbox, index) => {
+  dragula([answerbox, wordboxes[index]]).on('dragend', function (e) {
+    const singleResult = allResults[index];
+    checkResult(singleResult, answerbox);
+  });
 });
 
 function checkResult(results, answerbox) {

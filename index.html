@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="googlebot" content="index,follow" />
     <meta property="og:title" content="Hello" />
-    <meta property="og:description" content="Identify Arabic, Urdu, Pashto, Sindhi, Persian, Kurdish with this regular expression" />
-    <meta property="og:url" content="https://kashaan-m.github.io/blog/hello.html" />
-    <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*c8UMCmXFHumTOsRUooKZpw.png" />
+    <meta
+      property="og:description"
+      content="Identify Arabic, Urdu, Pashto, Sindhi, Persian, Kurdish with this regular expression" />
+    <meta
+      property="og:url"
+      content="https://kashaan-m.github.io/blog/hello.html" />
+    <meta
+      property="og:image"
+      content="https://cdn-images-1.medium.com/max/1600/1*c8UMCmXFHumTOsRUooKZpw.png" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="styles.css" />
     <title>مشق نمبر 1</title>
   </head>
   <body class="light">
     <main>
-      <section class="articles-wrapper">
-        <div class="wrapper" dir="rtl">
-          <p class="title">عربی میں ترجمہ کریں</p>
-          <p class="question">1- ایک گھر اور ایک بازار</p>
-            <div class="answerbox unsolved" id="ab1">
-            </div>
+      <section class="container" dir="rtl">
+        <h3 class="title">عربی میں ترجمہ کریں</h3>
+        <div class="wrapper">
+          <article class="question-wrapper">
+            <p class="question">1- ایک گھر اور ایک بازار</p>
+            <div class="answerbox unsolved" id="ab1"></div>
             <div class="wordsbox" id="wb1">
               <span class="child one" data-key="1">اَلْبَیْتُ</span>
               <span class="child two" data-key="2">اَلْسُوْقُ</span>
@@ -27,9 +33,10 @@
               <span class="child one" data-key="4">بَیْتٌ</span>
               <span class="child two" data-key="5">سُوْقٌ</span>
             </div>
-          <p class="question">2- گھر اور بازار</p>
-            <div class="answerbox unsolved" id="ab2">
-            </div>
+          </article>
+          <article class="question-wrapper">
+            <p class="question">2- گھر اور بازار</p>
+            <div class="answerbox unsolved" id="ab2"></div>
             <div class="wordsbox" id="wb2">
               <span class="child one" data-key="1">اَلْبَیْتُ</span>
               <span class="child two" data-key="2">السُّوْقُ</span>
@@ -37,9 +44,10 @@
               <span class="child one" data-key="4">بَیْتٌ</span>
               <span class="child two" data-key="5">سُوْقٌ</span>
             </div>
-          <p class="question">3- ہوا اور خوشبو</p>
-            <div class="answerbox unsolved" id="ab3">
-            </div>
+          </article>
+          <article class="question-wrapper">
+            <p class="question">3- ہوا اور خوشبو</p>
+            <div class="answerbox unsolved" id="ab3"></div>
             <div class="wordsbox" id="wb3">
               <span class="child one" data-key="1">اَلْبَیْتُ</span>
               <span class="child two" data-key="2">اَلرِّیْحُ</span>
@@ -48,19 +56,20 @@
               <span class="child two" data-key="5">سُوْقٌ</span>
               <span class="child two" data-key="6">الطِّیْبُ</span>
             </div>
+          </article>
         </div>
-
-       <script src='./dragula.min.js' defer></script>
-       <script src='./drag.js' defer></script>
       </section>
+      <div class="buttons-wrapper">
+        <button id="left-btn">اگلا سوال</button>
+        <span id="question-track"></span>
+        <button id="right-btn">پچھلا سوال</button>
+      </div>
+      <script src="./dragula.min.js" defer></script>
+      <script src="./drag_v2.js" defer></script>
+      <script src="./carousel.js" defer></script>
     </main>
     <footer>
-      <a href="https://github.com/Kashaan-M" class="link social-link">GitHub</a>
-      <a
-        href="https://www.linkedin.com/in/kashaan-mahmood-63a496a4/"
-        class="link social-link"
-        >LinkedIn</a
-      >
+      <p>&copy; Kashaan Mahmood</p>
     </footer>
   </body>
 </html>

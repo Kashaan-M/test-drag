@@ -1,0 +1,36 @@
+/* media query */
+
+/* 42rem = 42 x 15 = 630px */
+@media screen and (max-width: 42rem) {
+}
+/* 30rem = 30 x 15 = 450px */
+@media screen and (max-width: 30rem) {
+  .container {
+    width: 300px;
+    height: 300px;
+  }
+  .wrapper {
+    width: 800px;
+    flex-direction: row;
+  }
+  .question-wrapper {
+    flex-basis: 300px;
+    flex-shrink: 0;
+    flex-grow: 1;
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+  }
+  #left-btn,
+  #right-btn {
+    padding: 0.5rem;
+  }
+  #question-track {
+    padding: 0 2rem;
+    font-size: 1.2rem;
+  }
+}
